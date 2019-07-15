@@ -12,6 +12,10 @@ public class ConsumerController {
     @GetMapping("/feign-consumer")
     public String helloConsumer(){
         return helloService.hello();
+    }
 
+    @GetMapping("/feign-consumer1")
+    public String hello1Consumer(){
+        return helloService.hello1("hui");
     }
 }
