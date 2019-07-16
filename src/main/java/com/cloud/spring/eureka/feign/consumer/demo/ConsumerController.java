@@ -16,6 +16,10 @@ public class ConsumerController {
 
     @GetMapping("/feign-consumer1")
     public String hello1Consumer(){
-        return helloService.hello1("hui");
+        StringBuilder sb = new StringBuilder();
+        sb.append(helloService.hello("hui")).append("\n");
+        sb.append(helloService.hello("hui", 11)).append("\n");
+        sb.append(helloService.hello(new User("hui", 12))).append("\n");
+        return sb.toString();
     }
 }
